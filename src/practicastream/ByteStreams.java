@@ -34,34 +34,44 @@ public abstract class ByteStreams {
         FileInputStream entrada = null;
         FileOutputStream salida = null;
 
-        try {
+        try {//intentar abrir los documentos
             entrada = new FileInputStream(origen);
             salida = new FileOutputStream(destino);
             int i = entrada.read();
 
-            //primero escribo la cabecera
+            //primero escribo la cabecera y los primeros guiones
             salida.write(escribirCabecera().getBytes());
             salida.write(guiones.getBytes());
             while (i != -1) {
                 if (i == almohadilla && auxAtributos == 0) {
+                    //Si es la primera almohadilla despues de una llave se
+                    //como ya se ha escrito el titulo se escriben los guiones
+                    //y el salto de linea
                     salida.write(guiones.getBytes());
-                    salida.write(13);
+                    salida.write(enter);
+                    salida.write(enter);
                     salida.write(atributosPelicula[auxAtributos].getBytes());
+                    //comprabante para no salirnos de rango nunca
                     if (auxAtributos < atributosPelicula.length - 1) {
                         auxAtributos++;
                     }
                 } else if (i == almohadilla) {
-                    salida.write(13);
+                    //Si es una almohadilla salta de linea y escribe los el auxAtrib
+                    salida.write(enter);
+                    salida.write(enter);
                     salida.write(atributosPelicula[auxAtributos].getBytes());
                     if (auxAtributos < atributosPelicula.length - 1) {
                         auxAtributos++;
                     }
                 } else if (i == llaveIzq) {
+                    //si es una llaveIzq se introduce un salto de linea y se 
+                    //escriben los primeros guiones
                     salida.write(enter);
                     salida.write(enter);
                     salida.write(guiones.getBytes());
                     auxAtributos = 0;
                 } else {
+                    //si no es almohadilla o llave se escibe el caracter
                     salida.write(i);
                 }
                 i = entrada.read();
