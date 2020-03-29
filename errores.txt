@@ -1,16 +1,0 @@
-Sun Mar 29 20:26:03 CEST 2020Se ha introducido una ruta invalida introduce una ruta de nuevopracticastream.ExcepcionRutaInvalida
-	at practicastream.PracticaStream.pedirRutaOrigen(PracticaStream.java:75)
-	at practicastream.PracticaStream.main(PracticaStream.java:38)
-Sun Mar 29 20:26:12 CEST 2020Se ha introducido una ruta invalida introduce una ruta de nuevopracticastream.ExcepcionRutaInvalida
-	at practicastream.PracticaStream.pedirRutaOrigen(PracticaStream.java:75)
-	at practicastream.PracticaStream.main(PracticaStream.java:38)
-Sun Mar 29 20:26:29 CEST 2020No has introducido una rutapracticastream.ExcepcionRutaSalida
-	at practicastream.PracticaStream.pedirRutaDestino(PracticaStream.java:111)
-	at practicastream.PracticaStream.main(PracticaStream.java:38)
-Sun Mar 29 20:26:29 CEST 2020No has introducido una rutapracticastream.ExcepcionRutaSalida
-	at practicastream.PracticaStream.pedirRutaDestino(PracticaStream.java:111)
-	at practicastream.PracticaStream.main(PracticaStream.java:38)
-Sun Mar 29 20:26:52 CEST 2020No has introducido una rutapracticastream.ExcepcionRutaSalida
-	at practicastream.PracticaStream.pedirRutaDestino(PracticaStream.java:111)
-	at practicastream.PracticaStream.main(PracticaStream.java:38)
-
