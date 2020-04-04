@@ -30,6 +30,7 @@ public class PracticaStream {
         boolean salir = false;
         while (salir == false) {
             int opcion;
+            int opcionMenu2;
             imprimirMenu();
             opcion = lector.nextInt();
 
@@ -44,6 +45,21 @@ public class PracticaStream {
                     CharBufferStreams.escribirDocumento(pedirRutaOrigen(), pedirRutaDestino());
                     break;
                 case 4:
+                    imprimirSubMenu();
+                    opcionMenu2= lector.nextInt();
+                    switch (opcionMenu2){
+                        case 1:
+                            CharBufferStreams.leerLineaEscribirObjeto(pedirRutaOrigen(), pedirRutaDestino());
+                            break;
+                        case 2: 
+                            CharBufferStreams.leerObjetosEscribirObjetos(pedirRutaOrigen(), pedirRutaDestino());
+                            break;
+                        case 3:
+                            CharBufferStreams.leerObjetosConsola(pedirRutaOrigen());
+                            break;
+                    }
+                    break;
+                case 5:
                     salir = true;
                     break;
             }
@@ -58,9 +74,19 @@ public class PracticaStream {
                 + "cter a carácter (chareacter Streams");
         System.out.println("3) Lectura y escritura de fichero de fichero línea"
                 + "a línea (Character Streams)");
-        System.out.println("4)Salir");
+        System.out.println("4)Tratamiento de objetos.");
+        System.out.println("5) salir");
         System.out.println("---------------");
         System.out.print("Selecionna una opcion: ");
+    }
+    
+    public static void imprimirSubMenu(){
+        System.out.println("1) Lectura línea a línea y escritura con objetos");
+        System.out.println("2) Lectura de objetos y escritura de objetos.");
+        System.out.println("3) Lectura de objetos y escritura por consola.");
+        System.out.println("4) Volver al menú principal.");
+        System.out.println("-------------------------------------");
+        System.out.print("Selecciona una opcion: ");
     }
 
     public static String pedirRutaOrigen() {
